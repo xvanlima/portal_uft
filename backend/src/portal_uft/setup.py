@@ -29,13 +29,13 @@ setup(
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
     keywords="Python Plone CMS",
-    author="Ivan Lima",
-    author_email="ivan@uft.edu.br",
-    url="https://github.com/https://github.com/xvanlima/portal-uft",
+    author="Érico Andrei",
+    author_email="ericof@plone.org",
+    url="https://github.com/https://github.com/ericof/portal-uft",
     project_urls={
         "PyPI": "https://pypi.python.org/pypi/portal_uft",
-        "Source": "https://github.com/xvanlima/portal-uft",
-        "Tracker": "https://github.com/xvanlima/portal-uft/issues",
+        "Source": "https://github.com/ericof/portal-uft",
+        "Tracker": "https://github.com/ericof/portal-uft/issues",
     },
     license="GPL version 2",
     packages=find_packages("src", exclude=["ez_setup"]),
@@ -51,6 +51,7 @@ setup(
     ],
     extras_require={
         "test": [
+            "Products.PrintingMailHost",
             "zest.releaser[recommended]",
             "plone.app.testing[robot]>=7.0.0a3",
             "plone.restapi[test]",

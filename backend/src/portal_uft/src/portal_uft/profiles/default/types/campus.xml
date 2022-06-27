@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         meta_type="Dexterity FTI"
-        name="person"
+        name="campus"
         i18n:domain="portal_uft"
 >
   <property name="title"
             i18n:translate=""
-  >Person</property>
+  >Campus</property>
   <property name="description"
             i18n:translate=""
-  >Person in the site</property>
+  >Campus in the site</property>
   <property name="icon_expr">string:file-earmark-text</property>
-  <property name="factory">person</property>
-  <property name="add_view_expr">string:${folder_url}/++add++person</property>
+  <property name="factory">campus</property>
+  <property name="add_view_expr">string:${folder_url}/++add++campus</property>
   <property name="link_target" />
   <property name="immediate_view">view</property>
   <property name="global_allow">True</property>
@@ -25,14 +25,15 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">portal_uft.content.person.Person</property>
+  <property name="klass">portal_uft.content.campus.Campus</property>
   <property name="behaviors">
+    <element value="plone.dublincore" />
     <element value="portal_uft.contact_info" />
     <element value="plone.shortname" />
     <element value="plone.leadimage" />
     <element value="plone.namefromtitle" />
   </property>
-  <property name="schema">portal_uft.content.person.IPerson</property>
+  <property name="schema">portal_uft.content.campus.ICampus</property>
   <property name="model_source" />
   <property name="model_file" />
   <property name="schema_policy">dexterity</property>
