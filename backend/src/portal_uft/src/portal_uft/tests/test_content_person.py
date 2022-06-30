@@ -83,13 +83,10 @@ class PersonIntegrationTest(unittest.TestCase):
         # Fazer teansição para o estado pending
         api.content.transition(person, "submit")
         self.assertEqual(api.content.get_state(person), "pending")
+        breakpoint()
         # Testar se o Manager tem a permissão View
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        self.assertTrue(
-            api.user.has_permission("View", obj=person)
-        )  # print api.content.get_view(person)
+        self.assertTrue(api.user.has_permission("View", obj=person))
         # Testar se o Anonymous tem a permissão View
         setRoles(self.portal, TEST_USER_ID, ["Anonymous"])
-        self.assertTrue(
-            api.user.has_permission("View", obj=person)
-        )  # print api.content.get_view(person)
+        self.assertTrue(api.user.has_permission("View", obj=person))
