@@ -69,7 +69,7 @@
         />
   </genericsetup:upgradeSteps>
 
-    <genericsetup:upgradeSteps
+  <genericsetup:upgradeSteps
       profile="portal_uft:default"
       source="20220629001"
       destination="20220630001"
