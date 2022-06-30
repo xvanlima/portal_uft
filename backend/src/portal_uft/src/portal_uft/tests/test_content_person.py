@@ -67,3 +67,25 @@ class PersonIntegrationTest(unittest.TestCase):
         data.title = "Alex Limi"
         data.email = "alex.limi@uft.edu.br"
         IPerson.validateInvariants(data)
+
+    def test_workflow_pending(self):
+        # Criar person na raiz do site
+        person = api.content.create(
+            container=self.portal,
+            type=self.portal_type,
+            title="Palmas",
+            description="Campus da UFT em Palmas",
+            city="palmas",
+            email="palmas@uft.edu.br",
+            extension="2022",
+        )
+        self.assertTrue(IPerson.providedBy(person))
+        # Fazer teansição para o estado pending
+        api.content.transition(person, "submit")
+        self.assertEqual(api.content.get_state(person),"pending")
+        # Testar se o Manager tem a permissão View
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        self.assertTrue(api.user.has_permission("View", obj=person))# print api.content.get_view(person)
+        # Testar se o Anonymous tem a permissão View
+        setRoles(self.portal, TEST_USER_ID, ["Anonymous"])
+        self.assertTrue(api.user.has_permission("View", obj=person))# print api.content.get_view(person)
