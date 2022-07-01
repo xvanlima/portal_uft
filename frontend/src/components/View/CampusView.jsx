@@ -88,7 +88,7 @@ CampusView.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.object,
     email: PropTypes.string.isRequired,
-    extension: PropTypes.string.isRequired,
+    extension: PropTypes.string,
   }).isRequired,
 };
 

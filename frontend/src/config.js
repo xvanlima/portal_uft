@@ -27,6 +27,13 @@ export default function applyConfig(config) {
     supportedLanguages: ['pt-br'],
     defaultLanguage: 'pt-br',
   };
+  config.blocks.groupBlocksOrder = [
+    { id: 'mostUsed', title: 'Most used' },
+    { id: 'uft', title: 'UFT' },
+    { id: 'text', title: 'Text' },
+    { id: 'media', title: 'Media' },
+    { id: 'common', title: 'Common' },
+  ];
   config.views.contentTypesViews = {
     campus: CampusView,
     person: PersonView,
